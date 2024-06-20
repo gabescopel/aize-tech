@@ -1,0 +1,5 @@
+export function Triangle() {
+    return (
+        <></>
+    )
+}
