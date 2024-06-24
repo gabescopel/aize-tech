@@ -2,32 +2,32 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import clsx from 'clsx';
 
-interface MenuProps {
-    menu: Menu;
+interface IMenuProps {
+    menu: IMenu;
 }
 
-interface Menu {
+interface IMenu {
     name: string;
     options: Option[];
 }
 
-interface OptionListProps {
+interface IOptionListProps {
     options: Option[];
     open: boolean;
+}
+
+interface IProcess {
+    id: string;
+    name: string;
 }
 
 interface Option {
     id: string;
     name: string;
-    process?: Process[];
-}
-
-interface Process {
-    id: string;
-    name: string;
+    process?: IProcess[];
 }
   
-const OptionList: React.FC<OptionListProps> = ({ options, open }) => {
+const OptionList: React.FC<IOptionListProps> = ({ options, open }) => {
     return (
         <ul
             className={clsx(
@@ -50,7 +50,7 @@ const OptionList: React.FC<OptionListProps> = ({ options, open }) => {
     );
 };
 
-const menuOptions: Menu[] = [
+const menuOptions: IMenu[] = [
     {
       name: 'Principal',
       options: [
@@ -82,7 +82,7 @@ const menuOptions: Menu[] = [
     },
 ];
   
-const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
+const MenuComponent: React.FC<IMenuProps> = ({ menu }) => {
     const [open, setOpen] = useState(true);
 
     return (

@@ -14,9 +14,11 @@ import { zinc } from 'tailwindcss/colors';
 import * as Toolbar from '@radix-ui/react-toolbar';
 import { DefaultEdge } from './Edges/DefaultEdges';
 import { Square } from './Nodes/Square';
+import { Triangle } from './Nodes/Triangle';
 
 const NODE_TYPES = {
    square: Square, 
+   triangle: Triangle, 
 }
 
 const EDGE_TYPES = {
@@ -35,7 +37,7 @@ const INITIAL_NODES = [
     },
     {
         id: crypto.randomUUID(),
-        type: "square",
+        type: "tringle",
         position: {
             x: 1000,
             y: 400,
@@ -58,6 +60,24 @@ const Flowchart: React.FC = () => {
             {
                 id: crypto.randomUUID(),
                 type: "square",
+                position: {
+                    x: 750,
+                    y: 350,
+                },
+                data: {},
+            },
+            {
+                id: crypto.randomUUID(),
+                type: "triangle",
+                position: {
+                    x: 750,
+                    y: 350,
+                },
+                data: {},
+            },
+            {
+                id: crypto.randomUUID(),
+                type: "triangle",
                 position: {
                     x: 750,
                     y: 350,

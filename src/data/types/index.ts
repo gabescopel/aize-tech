@@ -1,11 +1,6 @@
-export interface ProcessStepType {
-    id: string;
-    name: string;
+export type User = {
+    id: number,
+    name: string,
+    email: string,
+    password?: string,
 }
-
-export interface Process {
-    id: string;
-    name: string;
-    steps: ProcessStepType[];
-}
-  
